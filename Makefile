@@ -8,9 +8,9 @@ default: help
 include makefiles/*.mk
 
 .PHONY: start
-start: docker-compose-start ##- Start
+start: docker-compose-build docker-compose-start ##- Start
 .PHONY: deploy
-deploy: docker-compose-deploy ##- Deploy (start remotely)
+deploy: docker-compose-build docker-compose-deploy ##- Deploy (start remotely)
 .PHONY: stop
 stop: docker-compose-stop ##- Stop
 

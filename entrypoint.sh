@@ -2,6 +2,11 @@
 
 mkdir -p /var/lib/docker/volumes
 
+if [ -z "$HOST" ]; then
+  echo 'HOST environment variable is mandatory !'
+  exit 1
+fi
+
 if [ $# -eq 0 ]; then
 	echo "*** Starting supercronic ***"
 
