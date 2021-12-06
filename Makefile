@@ -14,6 +14,9 @@ deploy: docker-compose-build docker-compose-deploy ##- Deploy (start remotely)
 .PHONY: stop
 stop: docker-compose-stop ##- Stop
 
+clean: environment
+	$(load_env); docker-compose ${compose_files} down -v
+
 .PHONY: console
 console: environment ##- Enter interactive console
 	$(info *** Starting console ***)
