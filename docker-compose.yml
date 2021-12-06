@@ -4,6 +4,13 @@ services:
   archiver:
     build: .
     restart: always
+    environment:
+      HOST: ${HOST}
+      RESTIC_REPOSITORY: ${RESTIC_REPOSITORY}
+      RESTIC_PASSWORD: ${RESTIC_PASSWORD}
+      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
+      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
+      AWS_DEFAULT_REGION: ${AWS_DEFAULT_REGION}
     volumes:
       - /var/lib/docker/volumes:/var/lib/docker/volumes
       - /var/run/docker.sock:/var/run/docker.sock:ro

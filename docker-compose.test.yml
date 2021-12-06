@@ -47,13 +47,8 @@ services:
   archiver:
     environment:
       HOST: fake-host
-      RESTIC_REPOSITORY: ${RESTIC_REPOSITORY}
-      RESTIC_PASSWORD: ${RESTIC_PASSWORD}
-      AWS_ACCESS_KEY_ID: ${AWS_ACCESS_KEY_ID}
-      AWS_SECRET_ACCESS_KEY: ${AWS_SECRET_ACCESS_KEY}
-      AWS_DEFAULT_REGION: ${AWS_DEFAULT_REGION}
       MYSQL_ROOT_PASSWORD: secret
-      ARCHIVER_CONF: /root/archiver.conf
+      ARCHIVER_CONF: /root/restic.json
 
     command:
       - /bin/sh
