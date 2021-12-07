@@ -15,11 +15,6 @@ EOF
 # AWS_DEFAULT_REGION=
 
 case "$stage" in
-	"default")
-		;;
-
 	*)
-		echo "Unknown stage $stage" >&2
-		exit 1
 		;;
 esac
