@@ -13,7 +13,7 @@ RUN apk add --no-cache \
 
 COPY entrypoint.sh /
 
-RUN git clone https://github.com/kmmndr/restic.mk.git /tmp/restic.mk \
+RUN git clone --branch v0.2.0 https://github.com/kmmndr/restic.mk.git /tmp/restic.mk \
  && cd /tmp/restic.mk/ \
  && make install \
  && rm -rf /tmp/restic.mk

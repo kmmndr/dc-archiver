@@ -48,7 +48,9 @@ services:
     environment:
       HOST: fake-host
       MYSQL_ROOT_PASSWORD: secret
-      ARCHIVER_CONF: /root/restic.json
+      RESTIC_CONF: /root/restic.json
+      RESTIC_REPOSITORY: /root/backup
+      RESTIC_PASSWORD: password
 
     command:
       - /bin/sh
@@ -56,7 +58,7 @@ services:
       - |
         cat > /root/restic.json <<EOF
         {
-          "virtual": [
+          "virtual_volumes": [
             {
               "name": "tester2",
               "backup_cmd": "docker exec archiver_db_1 mysqldump --all-databases -uroot -p$$MYSQL_ROOT_PASSWORD",
